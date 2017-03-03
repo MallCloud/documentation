@@ -1,4 +1,4 @@
-# template-docs
+# AisleFire Documentation
 Documentation for Template System
 
 
