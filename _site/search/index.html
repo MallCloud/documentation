@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="generator" content="Jekyll v3.3.1">
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="AisleFire" />
+		<!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Search - AisleFire</title>
+<meta property="og:title" content="Search" />
+<meta name="description" content="Product documentation template for Jekyll." />
+<meta property="og:description" content="Product documentation template for Jekyll." />
+<link rel="canonical" href="http://localhost:4000/search/" />
+<meta property="og:url" content="http://localhost:4000/search/" />
+<meta property="og:site_name" content="AisleFire" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "headline": "Search",
+    "description": "Product documentation template for Jekyll.",
+    "logo": "http://localhost:4000/siteicon.png",
+    "url": "http://localhost:4000/search/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+		
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="AisleFire logo"></a>
+				AisleFire
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Welcome</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/Template-System/api/">Template-System</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/Template-System/api/">API</a></li>
+								
+									<li class="nav-item "><a href="/Template-System/protobuf/">Protobuf</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/changelog/">Change Log</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>AisleFire</h2>
+				<h3>Search</h3>
+			</div>
+			<article class="content">
+				<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+<ul id="search-results"></ul>
+
+<script>
+	window.data = {
+		
+			
+				
+					
+					
+
+					"template-system-api": {
+						"id": "template-system-api",
+						"title": "API",
+						"category": "",
+						"url": " /Template-System/api/",
+						"content": "Frontend creates json file and sends it to the mallcloud servers. { \"parameters\" : { \"mallcloudid\" : \"productid\", \"transactionid\" : \"our_transactionid\", \"lineitemnumber\" : \"itemnumber\" }, \"templates\" : { \"M_Helmets\" : { \"DEFAULT\" }, \"M_Helmets_F\" : { \"DEFAULT\" }, \"Nxt_Thrty_Days\" : { \"CUSTOM\" }, \"Lng_Time_No_See\" : { \"DISABLE\" } }, \"Nxt_Thrty_Days\" : { \"Algorithms\" : ['NeuralNet', 'RidgeRegression', 'SVM', 'RandomForest'], \"Parameters\" : ['productid', 'itemnumber'] } } Parameters refer to mapping between names of columns in internal system vs user’s system. Users can let the templates stay enabled or disable certain templates according to their needs. User can either use default system which chooses the algorithms and parameters for them or Customize the system and use different algorithms and or parameters used. After the mallcloud servers get the json file, they break it down into pieces according to Templates needed. The format is converted to the tensorflow supported ProtocolBuffer system. The templates are created by taking algorithm definitions from models available, parameter list and algorithm list from ProtocolBuffer defined for that particular template(ProtocolBuffers are extracted from JSON provided by user as mentioned). The system computes templates and provides json based interaction between templates and the user. After all templates are done internally ie, each template has created predictions using multiple algorithms and superlearner has chosen the best prediction values, the results are sent to the Deep Neural Network. Deep Neural Network will provide final results. Results of all templates can be extracted by user upon demand using the JSON api from point 3. This JSON api also provides graphs in order to observe the templates’ results and each algorithm’s results from a particular template. User is allowed to tweak almost everything in the system or just use the default values. Proper logging and error api has been created to provide instructions and help get back to a working system."
+					}
+
+					
+				
+			
+		
+			
+				
+					,
+					
+
+					"template-system-protobuf": {
+						"id": "template-system-protobuf",
+						"title": "Protobuf",
+						"category": "",
+						"url": " /Template-System/protobuf/",
+						"content": ""
+					}
+
+					
+				
+			
+		
+	};
+</script>
+<script src="/scripts/lunr.min.js"></script>
+<script src="/scripts/search.js"></script>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
